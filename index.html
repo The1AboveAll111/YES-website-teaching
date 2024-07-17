@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Small Quest</title>
-<style>
-body {
-  font-family: monospace;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+  <div id="tester" style="width:600px;height:400px;"></div>
 </head>
+
 <body>
-<p id="story">You stand at the edge of a dark forest. To the north, a path leads into the woods. To the south, a river flows gently. What will you do?</p>
-<button onclick="goNorth()">Go North</button>
-<button onclick="goSouth()">Go South</button>
-<script>
-function goNorth() {
-  document.getElementById("story").innerHTML = "You enter the forest. The air is thick with the scent of pine needles. You hear the sound of birds chirping in the distance. You see a small clearing ahead.";
-  document.getElementById("story").innerHTML += "<br><button onclick='exploreClearing()'>Explore the clearing</button>";
-}
-function goSouth() {
-  document.getElementById("story").innerHTML = "You follow the river. It's a beautiful day. The sun is shining, and the birds are singing. You see a small bridge ahead.";
-  document.getElementById("story").innerHTML += "<br><button onclick='crossBridge()'>Cross the bridge</button>";
-}
-function exploreClearing() {
-  document.getElementById("story").innerHTML = "In the clearing, you find a small cottage. There is a sign on the door that reads 'Welcome'. Do you enter?";
-  document.getElementById("story").innerHTML += "<br><button onclick='enterCottage()'>Enter the cottage</button>";
-  document.getElementById("story").innerHTML += "<br><button onclick='leaveClearing()'>Leave the clearing</button>";
-}
-function enterCottage() {
-  document.getElementById("story").innerHTML = "You open the door and enter the cottage. It's cozy and warm. There's a fireplace burning in the corner, and a table set with tea and biscuits. You hear a voice from behind you. 'Welcome,' it says. You turn around and see an old woman sitting in a rocking chair. She smiles at you. What do you say?";
-  document.getElementById("story").innerHTML += "<br><button onclick='greetOldWoman()'>Greet the old woman</button>";
-}
-function greetOldWoman() {
-  document.getElementById("story").innerHTML = "You greet the old woman. She tells you that she is a witch. She offers you a cup of tea. Do you accept?";
-  document.getElementById("story").innerHTML += "<br><button onclick='acceptTea()'>Accept the tea</button>";
-  document.getElementById("story").innerHTML += "<br><button onclick='declineTea()'>Decline the tea</button>";
-}
-function acceptTea() {
-  document.getElementById("story").innerHTML = "You accept the tea. The old woman smiles and hands you a cup. You take a sip. It's delicious! You feel a strange warmth spreading through your body. The old woman tells you that you are now a witch. She gives you a magic wand and tells you to use it wisely. You thank her and leave the cottage.";
-  document.getElementById("story").innerHTML += "<br><button onclick='endGame()'>The End</button>";
-}
-function declineTea() {
-  document.getElementById("story").innerHTML = "You decline the tea. The old woman looks disappointed. She says, 'You will regret this.' You leave the cottage.";
-  document.getElementById("story").innerHTML += "<br><button onclick='endGame()'>The End</button>";
-}
-function leaveClearing() {
-  document.getElementById("story").innerHTML = "You leave the clearing and return to the forest. The path ahead is dark and mysterious. You continue on your journey. ";
-  document.getElementById("story").innerHTML += "<br><button onclick='endGame()'>The End</button>";
-}
-function crossBridge() {
-  document.getElementById("story").innerHTML = "You cross the bridge. On the other side, you see a small village. You enter the village and are greeted by friendly villagers. They invite you to stay for a while. You accept and spend the rest of your days in peace and happiness. ";
-  document.getElementById("story").innerHTML += "<br><button onclick='endGame()'>The End</button>";
-}
-function endGame() {
-  document.getElementById("story").innerHTML = "Thank you for playing!";
-} 
-</script>
+  <script src="script.js"></script>
+  <script>
+
+    TESTER = document.getElementById('tester');
+
+    var trace1 = {
+
+      x: ["blue(470)", "cyan(525)", "green(560)", "yellow(585)", "orange(600)", "red(645)", "deep red(700)", "IR1(735)", "IR2(810)", "IR3(880)", "IR4(940)"],
+
+      y: [26.55, 13.74, 15.41, 15.45, 16.49, 37.88, 61.39, 61.39,62.4, 90.15, 98.34, 101.97],
+
+      mode: 'markers',
+
+      type: 'scatter',
+
+      name: 'Team A',
+
+      text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'],
+
+      marker: { size: 10}
+
+    };
+
+
+
+    var data = [trace1];
+    var layout = {
+      title: 'Reflection Percentage',
+      xaxis: {
+        title: 'Wavelength (nm)',
+      },
+      yaxis: {
+        title: 'Reflection %',
+      }
+    };
+
+
+
+    Plotly.newPlot('tester', data, layout);
+
+  </script>
 </body>
+
 </html>
 
 <script src="webpage.js"></script>
